@@ -2,15 +2,23 @@
 <html>
 <head>
   <title>Web Proxy</title>
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/css/mdui.min.css"
+  integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP"
+  crossorigin="anonymous"
+  />
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
   <base target="_blank">
   <style>
     body {
       padding: 0 0.5em;
+      
+      
     }
     .box {
-      margin-top: 1em;
+      margin-top: 10em;
     }
     #txtURL {
       width: 100%;
@@ -27,12 +35,19 @@
     }
   </style>
 </head>
-<body>
-  <div class="box">
-    <input id="txtURL" type="text" value="www.google.com" autofocus>
+<body class="mdui-theme-primary-cyan mdui-theme-accent-cyan">
+  <header class="mdui-appbar">
+    <div class="mdui-toolbar mdui-color-theme-300">
+      <span class="mdui-typo-title">Web Proxy</span>
+    </div>
+  </header>
+  
+  <div class="mdui-textfield mdui-textfield-floating-label">
+    <label class="mdui-textfield-label">Input a URL</label>
+    <input id="txtURL" class="mdui-textfield-input" type="text"/>
   </div>
-  <div class="box">
-    <button id="btnGo">Go</button>
+  <div>
+    <button id="btnGo" class="mdui-btn mdui-btn-raised mdui-color-theme-300 mdui-ripple">Go</button>
   </div>
 
   <script>
@@ -159,5 +174,10 @@
       updateSelected()
     }
   </script>
+  <script
+  src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
+  integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
+  crossorigin="anonymous"
+  ></script>
 </body>
 </html>
