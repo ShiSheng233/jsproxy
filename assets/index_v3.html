@@ -128,6 +128,25 @@
       ctl.postMessage([cmd, val])
     }
 
+    const SITE_LIST = [
+      ['google', ''],
+      ['youtube', ''],
+      ['twitter', 'twitter.com/google'],
+      ['twitch', 'www.twitch.tv/'],
+      ['wiki', 'zh.wikipedia.org/'],
+      ['gist', 'gist.github.com/']
+    ]
+
+    function showIcons() {
+      list.innerHTML = SITE_LIST.map(v => {
+        let [id, url] = v
+        url = url || `www.${id}.com/`
+        return `\
+<a rel="noopener noreferrer" href=./-----https://${url}>\
+<img width=128 height=128 src=__sys__/assets/ico/${id}.png></a>`
+      }).join('')
+    }
+
     function addNodeItem(id, text) {
       const optEl = document.createElement('option')
       optEl.id = '--' + id
