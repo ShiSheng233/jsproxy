@@ -8,51 +8,54 @@
   integrity="sha384-2PJ2u4NYg6jCNNpv3i1hK9AoAqODy6CdiC+gYiL2DVx+ku5wzJMFNdE3RoWfBIRP"
   crossorigin="anonymous"
   />
+  <script
+  src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
+  integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
+  crossorigin="anonymous">
+</script>
   <link rel="icon" type="image/ico" href="https://cdn.jsdelivr.net/gh/ShiSheng233/Blog_Picture/internet.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
   <base target="_blank">
   <style>
-    body {
-      padding: 0 0.5em;
-      
-      
-    }
+    body {padding: 0 0.5em;}
     .box {
       margin-top: 10em;
     }
-    #txtURL {
-      width: 100%;
-      height: 2em;
-      text-indent: 0.5em;
-      padding: 0.25em 0;
-    }
-    #btnGo {
-      width: 100%;
-      font-size: 1.5em;
-    }
-    #list a {
-      margin: 1em;
-    }
+    #txtURL {width: 100%;height: 2em;text-indent: 0.5em;padding: 0.25em 0;}
+    #btnGo_1 {width: 100%;font-size: 1.5em;}
+    #list a {margin: 1em;}
   </style>
 </head>
-<body class="mdui-theme-primary-cyan mdui-theme-accent-cyan">
+
+<body class="mdui-theme-primary-pink mdui-theme-accent-pink mdui-theme-layout-dark">
   <header class="mdui-appbar">
-    <div class="mdui-toolbar mdui-color-theme-300">
+    <div class="mdui-toolbar">
       <span class="mdui-typo-title">Web Proxy</span>
     </div>
   </header>
   
   <div class="mdui-textfield mdui-textfield-floating-label">
+    <i class="mdui-icon material-icons">public</i>
     <label class="mdui-textfield-label">Input a URL</label>
     <input id="txtURL" class="mdui-textfield-input" type="text"/>
+    <div class="mdui-textfield-helper">输入一个你想代理访问的网址</div>
   </div>
   <div>
-    <button id="btnGo" class="mdui-btn mdui-btn-raised mdui-color-theme-300 mdui-ripple">Go</button>
+    <button id="btnGo_1" class="mdui-btn mdui-color-theme-accent mdui-btn-raised mdui-color-theme-300 mdui-ripple" mdui-dialog="{target: '#go_or_not'}">Go</button>
+
+  <div class="mdui-dialog" id="go_or_not">
+    <div class="mdui-dialog-title">注意</div>
+    <div class="mdui-dialog-content">请不要在任何一个网站登录账号！</div>
+    <div class="mdui-dialog-actions mdui-dialog-actions-stacked">
+      <button id="btnGo" class="mdui-btn mdui-ripple" mdui-dialog-confirm>我已了解，冲冲冲</button>
+      <button class="mdui-btn mdui-ripple" mdui-dialog-close>取消</button>
+    </div>
+  </div>
   </div>
   <div class="box">
-    <span>切换线路:</span>
-    <select id="selNode"></select>
+    <span>线路:</span>
+    <select id="selNode" class="mdui-select"></select>
   </div>
   <div class="box" id="list">
   </div>
@@ -175,10 +178,6 @@
       updateSelected()
     }
   </script>
-  <script
-  src="https://cdn.jsdelivr.net/npm/mdui@1.0.0/dist/js/mdui.min.js"
-  integrity="sha384-aB8rnkAu/GBsQ1q6dwTySnlrrbhqDwrDnpVHR2Wgm8pWLbwUnzDcIROX3VvCbaK+"
-  crossorigin="anonymous"
-  ></script>
+
 </body>
 </html>
